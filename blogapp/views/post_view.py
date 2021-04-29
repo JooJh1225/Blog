@@ -7,7 +7,7 @@ from ..models import Post
 from ..forms import PostForm
 
 @login_required(login_url="common:login")
-def post(request):
+def post_create(request):
 
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -19,4 +19,4 @@ def post(request):
             return redirect('index')
     else:
         form = PostForm()
-    return render(request, "blogapp/post_form.html", {"from" : form})
+    return render(request, "blogapp/post_form.html", {"form": form})
