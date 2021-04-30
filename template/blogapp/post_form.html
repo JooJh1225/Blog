@@ -4,6 +4,7 @@
 <div class="container">
   <h5 class="my-3 border-bottom pb-2 ">POST</h5>
   <form method="post" class="post-form my-3" >
+    <input type="hidden" name="next" value="post_list">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">upload</button>
